@@ -22,5 +22,29 @@ namespace WordOfTheDay.Window.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("dictionary.dat")]
+        public string DictionaryFileName {
+            get {
+                return ((string)(this["DictionaryFileName"]));
+            }
+            set {
+                this["DictionaryFileName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DictionaryPath {
+            get {
+                return ((string)(this["DictionaryPath"]));
+            }
+            set {
+                this["DictionaryPath"] = value;
+            }
+        }
     }
 }
