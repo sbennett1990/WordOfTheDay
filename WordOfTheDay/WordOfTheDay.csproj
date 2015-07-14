@@ -96,9 +96,11 @@
   -->
   <Target Name="PostBuild">
     <!--Copy SourceFiles="@(DLLToCopy)" DestinationFolder="$(MSBuildProjectDirectory)\%(DLLToCopy.FolderToCopyTo)" /-->
-    <Copy SourceFiles="@(ConfigToCopy)" DestinationFolder="$(MSBuildProjectDirectory)\%(ConfigToCopy.FolderToCopyTo)" />
+    <!--Copy SourceFiles="@(ConfigToCopy)" DestinationFolder="$(MSBuildProjectDirectory)\%(ConfigToCopy.FolderToCopyTo)" /-->
   </Target>
+  <!--
   <PropertyGroup>
-    <!--PostBuildEvent>$(MSBuildToolsPath)\msbuild $(ProjectPath) /t:PostBuild /p:Configuration=$(ConfigurationName)</PostBuildEvent-->
+    <PostBuildEvent>$(MSBuildToolsPath)\msbuild $(ProjectPath) /t:PostBuild /p:Configuration=$(ConfigurationName)</PostBuildEvent>
   </PropertyGroup>
+  -->
 </Project>
