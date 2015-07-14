@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.IO;
+using System.Reflection;
 
 namespace WordOfTheDay
 {
@@ -9,14 +10,19 @@ namespace WordOfTheDay
 		private string dictionaryPath;
 
 		/// <summary>
-		/// Constructor.
+		/// Constructor. Set up the path to the dictionary file and the name 
+		/// of the file. If the values in the settings file are blank, then 
+		/// set up with the default values. 
 		/// </summary>
 		public DictionaryReader() {
 			dictionaryFile = Properties.Settings.Default.DictionaryFileName;
 			dictionaryPath = Properties.Settings.Default.DictionaryPath;
 
+			if (dictionaryFile.Equals(string.Empty)) {
+				dictionaryFile = "dictionary.dat";
+			}
 			if (dictionaryPath.Equals(string.Empty)) {
-				dictionaryPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+				dictionaryPath = ".";
 			}
 		}
 
