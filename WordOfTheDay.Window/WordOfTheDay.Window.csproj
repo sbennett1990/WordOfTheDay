@@ -102,11 +102,11 @@
   </ItemGroup>
   <ItemGroup>
     <!-- This item needs to be copied every time the library project is built -->
-	<ConfigToCopy Include="$(MSBuildProjectDirectory)\..\WordOfTheDay\bin\$(Configuration)\WordOfTheDay.dll.config">
+    <ConfigToCopy Include="$(MSBuildProjectDirectory)\..\WordOfTheDay\bin\$(Configuration)\WordOfTheDay.dll.config">
       <FolderToCopyTo>$(MSBuildProjectDirectory)\bin\$(Configuration)</FolderToCopyTo>
     </ConfigToCopy>
     <!-- These items should get copied to the Desktop folder on Release builds -->
-	<DLLToCopy Include="$(MSBuildProjectDirectory)\bin\$(Configuration)\WordOfTheDay.dll">
+    <DLLToCopy Include="$(MSBuildProjectDirectory)\bin\$(Configuration)\WordOfTheDay.dll">
       <FolderToCopyTo>C:\Users\sbennet\Desktop\WordofTheDay</FolderToCopyTo>
     </DLLToCopy>
     <ExeToCopy Include="$(MSBuildProjectDirectory)\bin\$(Configuration)\$(AssemblyName).exe*">
@@ -120,17 +120,17 @@
   </Target>
   -->
   <Target Name="PostBuild">
-    <Copy SourceFiles="@(ConfigToCopy)" DestinationFiles="%(ConfigToCopy.FolderToCopyTo)\$(AssemblyName).exe.config" />
+    <!--Copy SourceFiles="@(ConfigToCopy)" DestinationFiles="%(ConfigToCopy.FolderToCopyTo)\$(AssemblyName).exe.config" /-->
   </Target>
   <Target Name="PostRelease">
-    <Copy SourceFiles="@(DLLToCopy)" DestinationFolder="%(DLLToCopy.FolderToCopyTo)" />
-    <Copy SourceFiles="@(ExeToCopy)" DestinationFolder="%(ExeToCopy.FolderToCopyTo)" />
+    <!--Copy SourceFiles="@(DLLToCopy)" DestinationFolder="%(DLLToCopy.FolderToCopyTo)" /-->
+    <!--Copy SourceFiles="@(ExeToCopy)" DestinationFolder="%(ExeToCopy.FolderToCopyTo)" /-->
   </Target>
   <!-- Non-Release Post-Build Events -->
   <PropertyGroup Condition=" '$(Configuration)' != 'Release' ">
     <PostBuildEvent>
-	  $(MSBuildToolsPath)\msbuild $(ProjectPath) /t:PostBuild /p:Configuration=$(ConfigurationName)
-	</PostBuildEvent>
+	$(MSBuildToolsPath)\msbuild $(ProjectPath) /t:PostBuild /p:Configuration=$(ConfigurationName)
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- Release Post-Build Events -->
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
