@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("Window")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Lowe's Companies, Inc.")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Window")]
-[assembly: AssemblyCopyright("Copyright © Lowe's Companies, Inc. 2015")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
