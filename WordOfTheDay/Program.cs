@@ -4,23 +4,33 @@ namespace WordOfTheDay
 {
 	public class Program
 	{
+		const string usage = "usage: word [-f]";
+
 		/// <summary>
 		/// Application Entry Point.
 		/// </summary>
-		[System.STAThreadAttribute()]
-		public static void Main() {
-			//WordOfTheDay.App app = new WordOfTheDay.App();
-			//app.InitializeComponent();
-			//app.Run();
-
+		public static void Main(string[] args) {
 			DictionaryReader reader = new DictionaryReader();
+			string dictionaryFile = Properties.Settings.Default.DictionaryFileName;
+			string dictionaryPath = Properties.Settings.Default.DictionaryPath;
+
 
 			try {
+				for (int i = 0; i < args.Length; i++) {
+					switch (args[i]) {
+						case "-f":
+							FetchDictionaryFile.get("", dictionaryPath + "\\" + dictionaryFile);
+							break;
+						default:
+							break;
+					}
+				}
+
 				Tuple<string, string> word = reader.getNextWord();
 
 				Console.WriteLine();
 				Console.WriteLine(word.Item1);
-				Console.WriteLine(word.Item2);
+				Console.WriteLine(" - " + word.Item2);
 				Console.WriteLine();
 #if (DEBUG)
 				Console.Read();
