@@ -37,13 +37,25 @@ namespace WordOfTheDay.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\sbennet\\Documents")]
         public string DictionaryPath {
             get {
                 return ((string)(this["DictionaryPath"]));
             }
             set {
                 this["DictionaryPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DictionaryURL {
+            get {
+                return ((string)(this["DictionaryURL"]));
+            }
+            set {
+                this["DictionaryURL"] = value;
             }
         }
     }
