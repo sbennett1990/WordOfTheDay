@@ -21,6 +21,9 @@ namespace WordOfTheDay
 						case "-f":
 							FetchDictionaryFile.get("", dictionaryPath + "\\" + dictionaryFile);
 							break;
+						case "-d":
+							// d flag is for specifying a dictionary file on the command line
+							break;
 						default:
 							break;
 					}
