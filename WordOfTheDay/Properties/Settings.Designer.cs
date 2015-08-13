@@ -37,7 +37,7 @@ namespace WordOfTheDay.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\sbennet\\Documents")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\sbennet\\Documents\\dictionary.dat")]
         public string DictionaryPath {
             get {
                 return ((string)(this["DictionaryPath"]));
@@ -49,7 +49,8 @@ namespace WordOfTheDay.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.githubusercontent.com/sbennett1990/WordOfTheDay/master/dictionary.dat" +
+            "")]
         public string DictionaryURL {
             get {
                 return ((string)(this["DictionaryURL"]));

@@ -13,16 +13,19 @@ namespace WordOfTheDay
 			DictionaryReader reader = new DictionaryReader();
 			string dictionaryFile = Properties.Settings.Default.DictionaryFileName;
 			string dictionaryPath = Properties.Settings.Default.DictionaryPath;
-
+			string dictionaryURL = Properties.Settings.Default.DictionaryURL;
 
 			try {
 				for (int i = 0; i < args.Length; i++) {
 					switch (args[i]) {
 						case "-f":
-							FetchDictionaryFile.get("", dictionaryPath + "\\" + dictionaryFile);
+							FetchDictionaryFile.get(dictionaryURL, dictionaryPath);
 							break;
 						case "-d":
 							// d flag is for specifying a dictionary file on the command line
+							break;
+						case "-D":
+							// D flag is for updating the configuration file with the path to the specified dictionary
 							break;
 						default:
 							break;

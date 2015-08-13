@@ -6,10 +6,10 @@
       <Value Profile="(Default)">dictionary.dat</Value>
     </Setting>
     <Setting Name="DictionaryPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\sbennet\Documents</Value>
+      <Value Profile="(Default)">C:\Users\sbennet\Documents\dictionary.dat</Value>
     </Setting>
     <Setting Name="DictionaryURL" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">https://raw.githubusercontent.com/sbennett1990/WordOfTheDay/master/dictionary.dat</Value>
     </Setting>
   </Settings>
 </SettingsFile>

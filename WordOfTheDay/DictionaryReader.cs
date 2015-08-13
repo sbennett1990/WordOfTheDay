@@ -22,7 +22,7 @@ namespace WordOfTheDay
 				dictionaryFile = "dictionary.dat";
 			}
 			if (dictionaryPath.Equals(string.Empty)) {
-				dictionaryPath = ".";
+				dictionaryPath = @".\dictionary.dat";
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace WordOfTheDay
 		/// Thrown if the dictionary file could not be found
 		/// </exception>
 		public Tuple<string, string> getNextWord() {
-			string path = dictionaryPath + "\\" + dictionaryFile;
+			string path = dictionaryPath;// + "\\" + dictionaryFile;
 
 			if (!File.Exists(path)) {
 				throw new FileNotFoundException("Could not find file: " + path);
