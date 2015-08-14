@@ -2,9 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WordOfTheDay.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="DictionaryFileName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">dictionary.dat</Value>
-    </Setting>
     <Setting Name="DictionaryPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Users\sbennet\Documents\dictionary.dat</Value>
     </Setting>

@@ -6,7 +6,6 @@ namespace WordOfTheDay
 {
 	public class DictionaryReader
 	{
-		private string dictionaryFile;
 		private string dictionaryPath;
 
 		/// <summary>
@@ -15,12 +14,8 @@ namespace WordOfTheDay
 		/// set up with the default values. 
 		/// </summary>
 		public DictionaryReader() {
-			dictionaryFile = Properties.Settings.Default.DictionaryFileName;
 			dictionaryPath = Properties.Settings.Default.DictionaryPath;
 
-			if (dictionaryFile.Equals(string.Empty)) {
-				dictionaryFile = "dictionary.dat";
-			}
 			if (dictionaryPath.Equals(string.Empty)) {
 				dictionaryPath = @".\dictionary.dat";
 			}
@@ -34,7 +29,7 @@ namespace WordOfTheDay
 		/// Thrown if the dictionary file could not be found
 		/// </exception>
 		public Tuple<string, string> getNextWord() {
-			string path = dictionaryPath;// + "\\" + dictionaryFile;
+			string path = dictionaryPath;
 
 			if (!File.Exists(path)) {
 				throw new FileNotFoundException("Could not find file: " + path);

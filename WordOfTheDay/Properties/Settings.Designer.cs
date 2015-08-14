@@ -25,18 +25,6 @@ namespace WordOfTheDay.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("dictionary.dat")]
-        public string DictionaryFileName {
-            get {
-                return ((string)(this["DictionaryFileName"]));
-            }
-            set {
-                this["DictionaryFileName"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\sbennet\\Documents\\dictionary.dat")]
         public string DictionaryPath {
             get {
