@@ -25,23 +25,12 @@ namespace WordOfTheDay
 			cmdLine.registerSpecificSwitchMatchHandler("d", (sender, e) => {
 				dictionaryPath = e.Value;
 			});
+			// D flag is for updating the configuration file with the path to the specified dictionary
+			//cmdLine.registerSpecificSwitchMatchHandler("D", (sender, e) => {
+
+			//});
 
 			try {
-				//for (int i = 0; i < args.Length; i++) {
-				//	switch (args[i]) {
-				//		case "-f":
-				//			FetchDictionaryFile.get(dictionaryURL, dictionaryPath);
-				//			break;
-				//		case "-d":
-				//			// d flag is for specifying a dictionary file on the command line
-				//			break;
-				//		case "-D":
-				//			// D flag is for updating the configuration file with the path to the specified dictionary
-				//			break;
-				//		default:
-				//			break;
-				//	}
-				//}
 				cmdLine.processCommandLineArgs(args);
 
 				Tuple<string, string> word = reader.getNextWord();
