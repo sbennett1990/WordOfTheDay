@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using libcmdline;
 
 namespace WordOfTheDay
@@ -6,6 +7,28 @@ namespace WordOfTheDay
 	public class Program
 	{
 		const string usage = "usage: word [-u] [-d]";
+
+		/// <summary>
+		/// Fetch the file specified in the url and save it in the saveLocation.
+		/// </summary>
+		/// <param name="url"></param>
+		/// <param name="saveLocation"></param>
+		public static void download(string url, string saveLocation) {
+			using (WebClient client = new WebClient()) {
+				try {
+					Console.WriteLine(string.Format("Downloading file: {0}", url));
+					
+					client.DownloadFile(url, saveLocation);
+
+					Console.WriteLine("Done!");
+					Console.WriteLine(string.Format("Saved file to: {0}", saveLocation));
+				}
+				catch (Exception e) {
+					Console.WriteLine("error: " + e.Message + System.Environment.NewLine);
+					Environment.Exit(1);
+				}
+			}
+		}
 
 		/// <summary>
 		/// Application Entry Point.
@@ -20,7 +43,7 @@ namespace WordOfTheDay
 			cmdLine.PrefixRegexPatternList.Add("-{1}");
 
 			cmdLine.registerSpecificSwitchMatchHandler("u", (sender, e) => {
-				FetchDictionaryFile.get(dictionaryURL, dictionaryPath);
+				download(dictionaryURL, dictionaryPath);
 			});
 			cmdLine.registerSpecificSwitchMatchHandler("d", (sender, e) => {
 				dictionaryPath = e.Value;
